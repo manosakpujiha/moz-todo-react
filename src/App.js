@@ -12,22 +12,30 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
+
   const [tasks, setTasks] = useState(props.tasks);
   const [filter, setFilter] = useState('All');
+
   function addTask(name) {
+    console.log('add task')
     const newTask = {id: "todo-" + nanoid(), name: name, completed: false};
     setTasks([...tasks, newTask]);
+    localStorage.setItem("TODO-MOZILLA", JSON.stringify([...tasks, newTask]));
   }
+
   function editTask(id, newName) {
+
     const editedTaskList = tasks.map(task => {
     // if this task has the same ID as the edited task
       if (id === task.id) {
         //
         return {...task, name: newName}
+
       }
       return task;
     });
     setTasks(editedTaskList);
+    localStorage.setItem("TODO-MOZILLA", JSON.stringify(editedTaskList));
   }
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map(task => {
@@ -40,10 +48,12 @@ function App(props) {
       return task;
     });
     setTasks(updatedTasks);
+    localStorage.setItem("TODO-MOZILLA", JSON.stringify(updatedTasks));
   }
   function deleteTask(id) {
     const remainingTasks = tasks.filter(task => id !== task.id);
     setTasks(remainingTasks);
+    localStorage.setItem("TODO-MOZILLA", JSON.stringify(remainingTasks));
   }
   
   const taskList = tasks

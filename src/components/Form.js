@@ -16,7 +16,6 @@ const Form = (props) => {
 
     function handleChange(e) {
         setName(e.target.value);
-        console.log(name);
       }
     
     return (
