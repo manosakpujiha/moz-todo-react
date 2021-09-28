@@ -1,4 +1,4 @@
-This is an online to-do app which I improved upon, from the mozilla website tutorial on javascript frameworks. I enabled the app to persist the user data even after the browser is exited using local storage.
+This is an online to-do app that I improved upon, from the mozilla website tutorial on javascript frameworks. I enabled the app to persist the user data even after the browser is exited using local storage.
 
 https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_todo_list_beginning
 
